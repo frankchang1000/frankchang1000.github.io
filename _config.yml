@@ -1,0 +1,30 @@
+name: Frank Chang
+avatar: images/FrankChang.jpeg
+
+footer-links:
+  email: frank.chang1000@gmail.com
+  github: frankchang1000
+  twitter: frankchang1000
+
+url: ""
+
+permalink: /
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+sass:
+  style: :compressed
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME

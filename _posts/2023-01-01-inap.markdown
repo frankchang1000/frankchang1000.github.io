@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Inconspicuous Naturalistic Adversarial Patch"
+date: 2023-01-01
+image: /images/inap_before.png
+image2: /images/inap_after.png
+categories: research
+authors: "Audrey Ruckman, <strong>Frank Chang</strong>, Mike Tan, Omid Aramoon"
+venue: "MITRE Corporation"
+report: https://github.com/mitre/inap/blob/main/INAP_technical_paper.pdf
+code: https://github.com/mitre/inap
+---
+A GAN-based approach for generating inconspicuous naturalistic adversarial patches that degrade object detection performance while remaining visually difficult to detect, requiring only a single training image and placing patches in the background of a scene rather than on top of its subjects.

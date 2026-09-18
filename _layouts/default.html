@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>{{ site.name }}</title>
+  <meta name="author" content="{{ site.name }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p class="name" style="text-align: center;">
+                Frank Chang
+              </p>
+              <p>
+                I am a 3rd year undergraduate student in the <a href="https://www.cc.gatech.edu/">College of Computing</a> at Georgia Tech. I currently work on robotic foundation models in the <a href="https://pairlab.gatech.edu">PAIR Lab</a> led by <a href="https://animesh.garg.tech/">Animesh Garg</a>.
+              </p>
+              <p>
+                 I previously spent two summers at <a href="https://aws.amazon.com/">AWS</a> working on their data pipeline, and have also worked at MITRE's <a href="https://www.mitre.org/our-impact/mitre-labs/emerging-technology-innovation-center">Emerging Technology Innovation Center</a> on naturalistic adversarial patches.
+              </p>
+              <p>
+                Outside of school I enjoy backpacking and mountaineering. My goal is to visit every national park in the US, and I have currently visited 21. I am aiming for a 6000m summit in 2027!
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:frank.chang1000@gmail.com">Email</a> &nbsp;/&nbsp;
+                Resume &nbsp;/&nbsp;
+                <a href="https://www.linkedin.com/in/frankchang1000/">LinkedIn</a> &nbsp;/&nbsp;
+                <a href="https://scholar.google.com/citations?hl=en&user=jktWnL8AAAAJ">Scholar</a> &nbsp;/&nbsp;
+                <a href="https://twitter.com/frankchang1000">Twitter</a> &nbsp;/&nbsp;
+                <a href="https://github.com/frankchang1000/">Github</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:37%;max-width:37%">
+              <a href="images/FrankChang.jpeg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/FrankChang.jpeg" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:16px;width:100%;vertical-align:middle">
+              <h2>Research</h2>
+              <p>
+                I'm interested in computer vision, deep learning, generative AI, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images, usually with radiance fields.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'research' %}
+          <tr>
+            <td style="padding:16px;width:20%;vertical-align:middle">
+              <div class="one">
+                {% if post.image2 %}
+                <div class="two" id='{{ post.slug }}_image'>
+                  <img src='{{ post.image2 }}' width=100%>
+                </div>
+                {% endif %}
+                <img src='{{ post.image }}' width=100%>
+              </div>
+              {% if post.image2 %}
+              <script type="text/javascript">
+                function {{ post.slug | replace: '-', '_' }}_start() {
+                  document.getElementById('{{ post.slug }}_image').style.opacity = "1";
+                }
+                function {{ post.slug | replace: '-', '_' }}_stop() {
+                  document.getElementById('{{ post.slug }}_image').style.opacity = "0";
+                }
+                {{ post.slug | replace: '-', '_' }}_stop()
+              </script>
+              {% endif %}
+            </td>
+            <td style="padding:8px;width:80%;vertical-align:middle">
+              {% if post.project_page %}
+              <a href="{{ post.project_page }}">
+              {% endif %}
+                <span class="papertitle">{{ post.title }}</span>
+              {% if post.project_page %}
+              </a>
+              {% endif %}
+              <br>
+              {{ post.authors }}
+              <br>
+              <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+              <br>
+              {% if post.project_page %}
+              <a href="{{ post.project_page }}">project page</a> /
+              {% endif %}
+              {% if post.arxiv %}
+              <a href="{{ post.arxiv }}">arXiv</a> /
+              {% endif %}
+              {% if post.paper %}
+              <a href="{{ post.paper }}">paper</a> /
+              {% endif %}
+              {% if post.report %}
+              <a href="{{ post.report }}">technical report</a> /
+              {% endif %}
+              {% if post.video %}
+              <a href="{{ post.video }}">video</a> /
+              {% endif %}
+              {% if post.code %}
+              <a href="{{ post.code }}">code</a> /
+              {% endif %}
+              {% if post.poster %}
+              <a href="{{ post.poster }}">poster</a> /
+              {% endif %}
+              {% if post.slides %}
+              <a href="{{ post.slides }}">slides</a> /
+              {% endif %}
+              {% if post.website %}
+              <a href="{{ post.website }}">website</a> /
+              {% endif %}
+              {% if post.bibtex %}
+              <details class="bibtex"><summary>bibtex</summary><pre>{{ post.bibtex }}</pre></details>
+              {% endif %}
+              <p></p>
+              {{ post.excerpt }}
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:16px;width:100%;vertical-align:middle">
+              <h2>Projects</h2>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          {% for post in site.posts %}
+          {% for cat in post.categories %}
+          {% if cat == 'projects' %}
+          <tr>
+            <td style="padding:16px;width:20%;vertical-align:middle">
+              <div class="one">
+                {% if post.image2 %}
+                <div class="two" id='{{ post.slug }}_image'>
+                  <img src='{{ post.image2 }}' width=100%>
+                </div>
+                {% endif %}
+                <img src='{{ post.image }}' width=100%>
+              </div>
+              {% if post.image2 %}
+              <script type="text/javascript">
+                function {{ post.slug | replace: '-', '_' }}_start() {
+                  document.getElementById('{{ post.slug }}_image').style.opacity = "1";
+                }
+                function {{ post.slug | replace: '-', '_' }}_stop() {
+                  document.getElementById('{{ post.slug }}_image').style.opacity = "0";
+                }
+                {{ post.slug | replace: '-', '_' }}_stop()
+              </script>
+              {% endif %}
+            </td>
+            <td style="padding:8px;width:80%;vertical-align:middle">
+              {% if post.project_page %}
+              <a href="{{ post.project_page }}">
+              {% endif %}
+                <span class="papertitle">{{ post.title }}</span>
+              {% if post.project_page %}
+              </a>
+              {% endif %}
+              <br>
+              {{ post.authors }}
+              <br>
+              <em>{{ post.venue }}</em>, {{ post.date | date: "%Y" }}
+              <br>
+              {% if post.project_page %}
+              <a href="{{ post.project_page }}">project page</a> /
+              {% endif %}
+              {% if post.arxiv %}
+              <a href="{{ post.arxiv }}">arXiv</a> /
+              {% endif %}
+              {% if post.paper %}
+              <a href="{{ post.paper }}">paper</a> /
+              {% endif %}
+              {% if post.report %}
+              <a href="{{ post.report }}">technical report</a> /
+              {% endif %}
+              {% if post.video %}
+              <a href="{{ post.video }}">video</a> /
+              {% endif %}
+              {% if post.code %}
+              <a href="{{ post.code }}">code</a> /
+              {% endif %}
+              {% if post.poster %}
+              <a href="{{ post.poster }}">poster</a> /
+              {% endif %}
+              {% if post.slides %}
+              <a href="{{ post.slides }}">slides</a> /
+              {% endif %}
+              {% if post.website %}
+              <a href="{{ post.website }}">website</a> /
+              {% endif %}
+              {% if post.bibtex %}
+              <details class="bibtex"><summary>bibtex</summary><pre>{{ post.bibtex }}</pre></details>
+              {% endif %}
+              <p></p>
+              {{ post.excerpt }}
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:center;font-size:small;">
+                Website based on Jon Barron's <a href="https://github.com/jonbarron/jonbarron_website">source code</a>.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

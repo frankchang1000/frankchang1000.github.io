@@ -1,0 +1,18 @@
+---
+layout: post
+title: "MESA: An Evaluation Framework for Compositional, Semantic, and Spatial Generalization in Robotics"
+date: 2026-01-01
+image: /images/mesa.png
+categories: research
+authors: "Albert Wilcox*, <strong>Frank Chang</strong>*, Aishani Chakraborty, Nhi Nguyen, Jeremy A. Collins, Vaibhav Saxena, Benjamin Joffe, Siddharth Karamcheti, Animesh Garg"
+venue: "Conference on Robot Learning (CoRL)"
+project_page: https://www.pair.toronto.edu/MESA/
+bibtex: |
+  @article{mesa2026,
+      title={MESA: An Evaluation Framework for Compositional, Semantic, and Spatial Generalization in Robotics},
+      author={Albert Wilcox and Frank Chang and Aishani Chakraborty and Nhi Nguyen and Jeremy A. Collins and Vaibhav Saxena and Benjamin Joffe and Siddharth Karamcheti and Animesh Garg},
+      journal={arXiv preprint},
+      year={2026}
+  }
+---
+A dynamic evaluation framework for precise, reproducible measurement of language-conditioned policy generalization, isolating in-distribution performance and four axes of generalization: spatial configuration, object instance, object category, and subtask composition.

@@ -1,0 +1,111 @@
+---
+---
+
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+strong {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+h2 {
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.papertitle {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.name {
+  padding-top: 20px;
+  margin: 0;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+.one {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.colored-box {
+  color: black;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+/* Inline expandable BibTeX widget */
+details.bibtex {
+  display: inline;
+}
+
+details.bibtex > summary {
+  display: inline;
+  cursor: pointer;
+  color: #1772d0;
+  list-style: none;
+}
+
+details.bibtex > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.bibtex > summary:hover,
+details.bibtex[open] > summary {
+  color: #f09228;
+}
+
+details.bibtex pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  text-align: left;
+  background: #f7f7f7;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  padding: 10px 12px;
+  margin: 8px 0 0 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  line-height: 1.4;
+}
